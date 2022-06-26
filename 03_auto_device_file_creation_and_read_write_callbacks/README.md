@@ -11,25 +11,29 @@ $ make
 
 ## Load kernel modules and check it
 ```
-$ sudo insmod device_number.ko
-$ cat /proc/devices  | grep my_dev_number
- 90 my_dev_number
-```
-
-## Create device file
-TODO: delete this after implementing auto device file creation.
-```
-$ sudo mknod /dev/my_device c 90 0
+$ sudo insmod read_write.ko
+$ dmesg | tail
+...
+[43090.076771] Hello, Linux kernel!
+[43090.076777] read_write - registered Device numver Major: 242, Minor: 0
+$ ls -al /dev/read_write
+crw------- 1 root root 242, 0 Jun 26 21:27 /dev/read_write
 ```
 
 ## Write to device
 ```
-$ sudo chmod 666 /dev/my_device
-$ echo "Test write to my device" > /dev/my_device
+$ sudo chmod 666 /dev/read_write
+$ echo "Test write to my device" > /dev/read_write
 ```
 
 ## Read from device
 ```
-$ head -n 1 /dev/my_device
+$ head -n 1 /dev/read_write
 Test write to my device
+$ dmesg | tail
+...
+[43315.579699] dev number open was called
+[43315.579724] dev number close was called
+[43325.582342] dev number open was called
+[43325.582416] dev number close was called
 ```
