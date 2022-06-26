@@ -27,6 +27,7 @@ crw-r--r-- 1 root root 90, 0 Jun 25 21:05 /dev/my_device
 ```
 
 ## Open and close device file from test c program
+The callback for open/close is called by open/close the device file from the c program.
 ```
 $ gcc test.c -o test
 $ ./test
@@ -36,7 +37,6 @@ $ dmesg | tail
 [27801.264655] dev number open was called
 [27801.264762] dev number close was called
 ```
-The callback for open/close is called by open/close the device file from c program.
 
 ## Remove kernel module
 ```

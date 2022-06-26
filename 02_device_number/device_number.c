@@ -5,7 +5,7 @@
 // Meta Information
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Takehiro");
-MODULE_DESCRIPTION("Register a device number and implement a callback function for @@TODO");
+MODULE_DESCRIPTION("Register a device number and implement a callback function for open and close");
 
 // Called when the device file is opened
 static int driver_open(struct inode *device_file, struct file *instance) {
