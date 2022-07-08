@@ -1,8 +1,4 @@
-# 03 Auto device file creation and read write callbacks
-Here, I create device file automatically instead of using mknod command in previous chapter.
-
- I also add callbacks for read and write.
-
+# 04 GPIO driver
 ## Install kernel modules in Rapberry Pi
 ```
 sudo apt update
