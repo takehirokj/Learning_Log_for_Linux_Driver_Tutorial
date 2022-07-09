@@ -30,3 +30,14 @@ Turn off LED
 $ echo 0 > /dev/my_gpio_driver
 ```
 
+## Read from device
+```
+$ head -n 1 /dev/my_gpio_driver
+0
+```
+After push button is pressed.
+```
+$ head -n 1 /dev/my_gpio_driver
+1
+```
+
